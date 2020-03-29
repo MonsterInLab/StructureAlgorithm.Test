@@ -13,7 +13,9 @@ namespace StructureAlgorithm
 
             //BasicSortDemo.Show();
 
-            LinkedListDemo.Show();
+           // LinkedListDemo.Show();
+
+            TreeDemo.Show();
         }
     }
 }
