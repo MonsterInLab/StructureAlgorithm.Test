@@ -184,6 +184,7 @@ namespace StructureAlgorithm.AlgorithmFile
 
 
         #endregion
+
         private static void Show(this int[] arr)
         {
             foreach (var item in arr)
