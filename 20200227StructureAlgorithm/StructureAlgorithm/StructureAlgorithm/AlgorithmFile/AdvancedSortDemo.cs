@@ -21,9 +21,11 @@ namespace StructureAlgorithm.AlgorithmFile
             array.Show();
             Console.WriteLine("start sorting");
 
-            array.HeanpSort();
+          //  array.HeanpSort();
 
+            array.QuickSort();
 
+            Console.WriteLine("end sorting");
         }
 
         #region 希尔排序
@@ -100,11 +102,7 @@ namespace StructureAlgorithm.AlgorithmFile
                 left++;
                 t++;
             }
-
-
-
         }
-
 
         #endregion
 
@@ -121,7 +119,7 @@ namespace StructureAlgorithm.AlgorithmFile
             Console.WriteLine("堆构建完成");
 
             //2.交换堆顶元素与末尾元素
-            for (int j = arr.Length-1; j <0; j--)
+            for (int j = arr.Length-1; j > 0; j--)
             {
                 Swap(arr, 0, j);
                 BuildHeap(arr, 0, j);
@@ -129,7 +127,6 @@ namespace StructureAlgorithm.AlgorithmFile
 
 
         }
-
 
         private static void BuildHeap(int[] arr,int i,int length)
         {
@@ -160,10 +157,76 @@ namespace StructureAlgorithm.AlgorithmFile
             arr.Show();
         }
 
-
-        private static void Swap(int[] arr, int v, int j)
+        private static void Swap(int[] arr, int index1, int index2)
         {
+            int temp = arr[index1];
+            arr[index1] = arr[index2];
+            arr[index2] = temp;
+        }
+        #endregion
 
+
+        #region 快速排序
+        // 分治 + 递归
+        public static void QuickSort(this int[] arr)
+        {
+            QuickSortRecursion(arr, 0, arr.Length - 1);
+        }
+
+        private static void QuickSortRecursion(int[] arr, int left, int right)
+        {
+            if(left < right)
+            {
+                SetReference(arr, left, right);
+                int referenceIndex = right - 1;
+                int i = left;
+                int j = right - 1;
+                while (true)
+                {
+                    while(arr[++i] < arr[referenceIndex])
+                    {
+                    }
+                    while(j> left && arr[--j] > arr[referenceIndex])
+                    {
+                    }
+                    if (i < j)
+                    {
+                        Swap(arr, i, j);
+                        arr.Show();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                if (i < right)
+                {
+                    Swap(arr, i, right - 1);
+                    arr.Show();
+                }
+                QuickSortRecursion(arr, left, i - 1);
+                QuickSortRecursion(arr, i + 1,right);
+            }
+        }
+
+        private static void SetReference(int[] arr,int left,int right)
+        {
+            int mid = (left + right) / 2;
+            if(arr[left] > arr[mid])
+            {
+                Swap(arr, left, mid);
+            }
+            if(arr[left] > arr[right])
+            {
+                Swap(arr, left, right);
+            }
+            if(arr[mid] > arr[right])
+            {
+                Swap(arr, mid, right);
+            }
+            arr.Show();
+            Swap(arr, right - 1, mid);
+            arr.Show();
         }
 
 
