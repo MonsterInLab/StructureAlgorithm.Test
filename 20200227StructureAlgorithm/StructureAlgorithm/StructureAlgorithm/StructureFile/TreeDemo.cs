@@ -62,9 +62,22 @@ namespace StructureAlgorithm.StructureFile
 
             public void Show()
             {
+                //中序遍历
                 this.Left?.Show();
                 Console.WriteLine(this.iData + " ");
                 this.Right?.Show();
+
+                //先序遍历
+                Console.WriteLine(this.iData + " ");
+                this.Left?.Show();
+                this.Right?.Show();
+
+
+                //后序遍历
+                this.Left?.Show();
+                this.Right?.Show();
+                Console.WriteLine(this.iData + " ");
+
 
             }
         }
@@ -172,6 +185,8 @@ namespace StructureAlgorithm.StructureFile
             {
                 this._Root.Show();
             }
+
+
 
         }
     }
