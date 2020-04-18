@@ -182,7 +182,7 @@ namespace StructureAlgorithm.StructureFile
             else if(node.CompareTo(value) < 0)
             {// 如过key比当前节点小，则去找左子树
                 node.Left = Insert(node.Left, value);
-                if(NodeHeight(node.Left) - NodeHeight(node.Right) == 2)
+                if(Math.Abs(NodeHeight(node.Left) - NodeHeight(node.Right)) == 2)
                 {//高度差等于2表示已经不平衡
                     if(node.Left.CompareTo(value) < 0)
                     { //左左型
@@ -199,7 +199,7 @@ namespace StructureAlgorithm.StructureFile
             else
             {
                 node.Right = Insert(node.Right, value);
-                if(NodeHeight(node.Right) - NodeHeight(node.Left) == 2)
+                if(Math.Abs(NodeHeight(node.Right) - NodeHeight(node.Left)) == 2)
                 {
                     if (node.Right.CompareTo(value) > 0)
                     {// 右右型
@@ -239,7 +239,7 @@ namespace StructureAlgorithm.StructureFile
             if(compare < 0)
             { // 待删除key  比根小，继续往左子树查找
                 node.Left = Remove(node.Left, target);
-                if(NodeHeight(node.Right) - NodeHeight(node.Left) == 2)
+                if(Math.Abs(NodeHeight(node.Right) - NodeHeight(node.Left)) == 2)
                 {// 如果删除后失去平衡
                     if(NodeHeight(node.Right.Left) <= NodeHeight(node.Right.Right))
                     {
@@ -254,7 +254,7 @@ namespace StructureAlgorithm.StructureFile
             else if(compare > 0)
             {// 待删除key  比根大，继续往右子树查找
                 node.Right = Remove(node.Right, target);
-                if (NodeHeight(node.Left) - NodeHeight(node.Right) == 2)
+                if (Math.Abs(NodeHeight(node.Left) - NodeHeight(node.Right)) == 2)
                 {// 如果删除后失去平衡
                     if (NodeHeight(node.Left.Right) <= NodeHeight(node.Left.Left))
                     {
