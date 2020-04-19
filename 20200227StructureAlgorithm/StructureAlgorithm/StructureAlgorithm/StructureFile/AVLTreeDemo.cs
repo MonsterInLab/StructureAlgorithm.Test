@@ -292,7 +292,7 @@ namespace StructureAlgorithm.StructureFile
                         node.Right = Remove(node.Right, successor);//再把原来的successor删掉
                     }
                 }
-            }
+            } 
             return node;
         }
 
