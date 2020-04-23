@@ -18,9 +18,12 @@ namespace StructureAlgorithm
 
             //AdvancedSortDemo.Show();
 
-          //  AVLTreeDemo.Show();
+            //  AVLTreeDemo.Show();
 
-            GraphDemo.Show();
+
+            //GraphDemo.Show();
+
+            DijkstraDemo.Show();
         }
     }
 }
