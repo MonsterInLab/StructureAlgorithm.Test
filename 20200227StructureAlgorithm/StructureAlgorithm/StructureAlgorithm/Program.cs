@@ -24,10 +24,12 @@ namespace StructureAlgorithm
 
             //GraphDemo.Show();
 
-            DijkstraDemo.Show();
+          //  DijkstraDemo.Show();
 
             //哈夫曼树
-            new HuffumanTree().CreateTree();
+          //  new HuffumanTree().CreateTree();
+
+            new GrahpDemo().DemoTest();
         }
     }
 }

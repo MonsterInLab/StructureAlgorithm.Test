@@ -202,7 +202,9 @@ namespace StructureAlgorithm.StructureFile
             {
 
               //  List<int> values = new List<int>() { 7, 19, 2, 6, 32, 3, 21, 10 };
-                List<int> values = new List<int>() { 5, 29, 7, 8, 14, 23, 3, 11 };
+               // List<int> values = new List<int>() { 5, 29, 7, 8, 14, 23, 3, 11 };
+              //  List<int> values = new List<int>() { 40, 30, 15, 5, 4, 3, 3 };
+                List<int> values = new List<int>() { 45, 13, 12, 16, 9, 5};
                 int weightCount = values.Count;
 
                 int m = weightCount * 2 - 1;
